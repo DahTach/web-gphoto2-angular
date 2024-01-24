@@ -4,6 +4,10 @@
 ```
 npm install web-gphoto2
 ```
+### WebUSB
+```
+npm install --save @types/w3c-web-usb
+```
 
 ### Cropperjs
 

@@ -20,6 +20,7 @@
     "@angular/router": "^17.1.0",
     "@types/w3c-web-usb": "^1.0.10",
     "rxjs": "~7.8.0",
+    "stats.js": "^0.17.0",
     "tslib": "^2.3.0",
     "web-gphoto2": "^0.4.1",
     "zone.js": "~0.14.3"

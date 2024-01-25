@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PairingComponent } from './pairing.component';
+import { CameraComponent } from './camera.component';
 
-describe('PairingComponent', () => {
-  let component: PairingComponent;
-  let fixture: ComponentFixture<PairingComponent>;
+describe('CameraComponent', () => {
+  let component: CameraComponent;
+  let fixture: ComponentFixture<CameraComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PairingComponent]
+      imports: [CameraComponent]
     })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(PairingComponent);
+      .compileComponents();
+
+    fixture = TestBed.createComponent(CameraComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

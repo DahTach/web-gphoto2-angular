@@ -8,6 +8,20 @@ npm install web-gphoto2
 ```
 npm install --save @types/w3c-web-usb
 ```
+### Stats.js
+```
+npm install stats.js
+```
+### Fix Cross Origin
+Add this in angular.json under "serve" {...}
+```
+          "options": {
+            "headers": {
+              "Cross-Origin-Opener-Policy": "same-origin",
+              "Cross-Origin-Embedder-Policy": "require-corp"
+            }
+          },
+```
 
 ### Cropperjs
 

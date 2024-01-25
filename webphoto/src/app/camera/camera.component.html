@@ -1,0 +1,14 @@
+<h1>Camera</h1>
+<div>
+  <p>Select the camera here</p>
+  <button (click)="selectDevice()">Select</button>
+</div>
+<div>
+  <button (click)="startPreview()">Start Preview</button>
+  <button (click)="stopPreview()">Stop Preview</button>
+  <canvas id="preview_canvas" #preview_canvas></canvas>
+</div>
+<div>
+  <canvas id="capture_canvas" #capture_canvas></canvas>
+  <button (click)="captureImage()">Capture Image</button>
+</div>

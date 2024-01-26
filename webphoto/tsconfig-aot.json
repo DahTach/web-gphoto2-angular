@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "angularCompilerOptions": {
+      "preserveSymlinks": true
+    },
+    "plugins": [
+      {
+        "name": "@angular/compiler-cli/aot-plugin",
+        "inputs": [
+          "./build/**/*.wasm"
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Camera } from "web-gphoto2";
+import { Camera } from "./build/camera";
 
 @Component({
   selector: 'app-camera',
@@ -10,6 +10,14 @@ import { Camera } from "web-gphoto2";
 })
 
 export class CameraComponent {
+
+  constructor(private elementRef: ElementRef) {
+    this.previewMode = false;
+    this.camera = new Camera();
+    this.delay = new Promise(res => setTimeout(res, 2000));
+    this.previewCanvas = elementRef.nativeElement.querySelector('canvas')
+    this.captureCanvas = elementRef.nativeElement.querySelector('canvas')
+  }
 
   @ViewChild('preview_canvas', { static: true })
   previewCanvas: ElementRef<HTMLCanvasElement>;
@@ -84,13 +92,4 @@ export class CameraComponent {
     }
 
   }
-
-  constructor(private elementRef: ElementRef) {
-    this.previewMode = false;
-    this.camera = new Camera();
-    this.delay = new Promise(res => setTimeout(res, 2000));
-    this.previewCanvas = elementRef.nativeElement.querySelector('canvas')
-    this.captureCanvas = elementRef.nativeElement.querySelector('canvas')
-  }
-
 }

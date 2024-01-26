@@ -1,0 +1,29 @@
+version: "3"
+name: "web-gphoto2"
+services:
+  webgphoto2:
+    image: web-gphoto2/webgphoto
+    #network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+      #target: runtime
+      args:
+        UID: ${UID}
+        GID: ${GID}
+    #user: ${UID}
+    volumes:
+      - ./runtime/runs:/runs
+      - ./src:/src
+      - ./deps/.emcache/:/emsdk/upstream/emscripten/cache
+      #- ${MODELS}:/models
+      #- ${DATASET}:/datasets
+      #- ./samples:/samples
+      - ./runtime/bash_history:/home/user/.bash_history
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ../web-gphoto2/:/web-gphoto2/
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    ports:
+      - "3000:3000"

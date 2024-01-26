@@ -1,0 +1,33 @@
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+  DIR_ENV: .venv
+
+tasks:
+  default:
+    cmds:
+      - go-task -l
+    silent: true
+
+  build:
+    cmds:
+      - mkdir -p ./deps/.emcache
+      - docker compose build webgphoto2 --progress=plain
+
+  cli:
+    desc: open the bash console
+    cmds:
+      - mkdir -p runtime && touch runtime/bash_history
+      - xhost local:root || true
+      - docker compose run -p 3000:3000 --rm webgphoto2 bash
+
+  serve:
+    desc: serve the webapp
+    cmds:
+      - npx serve examples/preact
+
+  preview:
+    desc: serve the webapp
+    cmds:
+      - npx serve examples/view
